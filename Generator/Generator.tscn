@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Generator/MeshLybrary.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://Generator/Generator.cs" type="Script" id=2]
+[ext_resource path="res://Generator/new_environment.tres" type="Environment" id=3]
+
+[node name="Generator" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Floor" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_octant_size = 16
+cell_center_y = false
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Ceiling" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_octant_size = 16
+cell_center_y = false
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="Walls1" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_octant_size = 16
+cell_center_y = false
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls2" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_octant_size = 16
+cell_center_y = false
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls3" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_octant_size = 16
+cell_center_y = false
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls4" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_octant_size = 16
+cell_center_y = false
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 124.0
+margin_bottom = 20.0
+text = "Generate on right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
+[connection signal="pressed" from="Button" to="." method="StartGen"]
